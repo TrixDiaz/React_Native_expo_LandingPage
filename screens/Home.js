@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
+import campusLogo from '../assets/campus-logo.png';
 
 
 const Home = () => {
@@ -14,8 +15,9 @@ const Home = () => {
           <TouchableOpacity
             style={{
               width: 200,
-              marginHorizontal: 20,
+              marginHorizontal: 40,
               marginTop: 50,
+              paddingVertical: 5,
               paddingHorizontal: 20,
               borderRadius: 20,
               backgroundColor: "#F9F0FF",
@@ -32,7 +34,12 @@ const Home = () => {
               </Text>
             </Text>
           </TouchableOpacity>
+          <View style={styles.topHeader}>
+            <Text style={styles.tag}>Quezon City University</Text>
+            <Image source={campusLogo} style={styles.logo}></Image>
+          </View>
         </View>
+       
       </ScrollView>
     </SafeAreaView>
   );
@@ -43,7 +50,22 @@ const styles = StyleSheet.create({
     height: 500,
     width: "100%",
     borderRadius: 50,
-    backgroundColor: "linear-gradient(to bottom, #00c6fb, #005bea)",
+    backgroundColor: "#E2F1FF",
+  },
+  tag: {
+    fontSize: "30",
+    fontWeight: "bold",
+    marginHorizontal: 40,
+    marginVertical: 30,
+    width: 180,
+  },
+  topHeader: {
+    flexDirection: "row",
+  },
+  logo: {
+    right: 25,
+    width: 150,
+    height: 150,
   },
 });
 
